@@ -31,3 +31,10 @@ function soma(a: number, b: number) {
 	console.log(a + b);
 }
 soma(4, 5);
+
+//* 5. Tipo de retorno de funçôes
+
+function greeting(name: string): string {
+	return `Olá ${name}`;
+}
+console.log(greeting('Eric'));
