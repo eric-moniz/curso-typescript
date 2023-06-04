@@ -17,3 +17,8 @@ console.log(nums[2]);
 */
 const arr1 = [1, 'teste', true, [], { nome: 'Eric' }];
 console.log(arr1);
+//* 4. Tipo de parâmetro de funçôes
+function soma(a, b) {
+    console.log(a + b);
+}
+soma(4, 5);
