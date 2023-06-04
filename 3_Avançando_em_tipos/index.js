@@ -40,3 +40,12 @@ function passCoordinates(coord) {
     console.log('Y coordinates: ' + coord.y);
 }
 passCoordinates({ x: 25, y: 45.987 });
+//* 8. Propriedades opcionais
+function showNumbers(a, b, c) {
+    console.log('A: ' + a);
+    console.log('B: ' + b);
+    if (c)
+        console.log('C: ' + c);
+}
+showNumbers(1, 2, 3);
+showNumbers(1, 2);
