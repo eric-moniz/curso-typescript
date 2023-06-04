@@ -1,18 +1,24 @@
-// 1 - numbers
-var x = 10;
+"use strict";
+//* 1 - numbers
+let x = 10;
 console.log(x);
-var y = 15.8576;
+const y = 15.8576;
 console.log(y.toPrecision(4));
-// 2 - string
-var firstName = 'Eric';
+//* 2 - string
+const firstName = 'Eric';
 console.log(firstName.toUpperCase());
-var fullName;
-var lastName = 'Moniz';
+let fullName;
+const lastName = 'Moniz';
 fullName = firstName + ' ' + lastName;
 console.log(fullName);
 // 3 - boolean
-var a = false;
+let a = false;
 console.log(a);
 console.log(typeof a);
 a = true;
 console.log(a);
+//* 4 - Inference e Anotation
+let ann = 'Teste'; // anotation, nós que definimos o tipo, nessa caso uma string
+let inf = 'Teste'; // inference, o typescript assume que é uma string
+//* Compilação automática, usar tsc -w
+console.log('Testando a compilação automática');

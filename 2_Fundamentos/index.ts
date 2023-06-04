@@ -33,3 +33,7 @@ console.log(a);
 let ann: string = 'Teste'; // anotation, nós que definimos o tipo, nessa caso uma string
 
 let inf = 'Teste'; // inference, o typescript assume que é uma string
+
+//* Compilação automática, usar tsc -w
+
+console.log('Testando a compilação automática');
