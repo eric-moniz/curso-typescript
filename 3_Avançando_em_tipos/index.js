@@ -9,3 +9,11 @@ const nums = [100, 200];
 nums.push(300);
 console.log(nums);
 console.log(nums[2]);
+//* 3. O tipo 'any'
+/*
+    O 'any' transmite ao TS que qualquer tipo satisfaz a variável;
+    Devemos evitar ao máximo este tipo, pois vai contra os principios do TypeScript;
+    Dois casos de usos: o tipo de dado realmente não importa e arrays com dados de múltiplos tipos;
+*/
+const arr1 = [1, 'teste', true, [], { nome: 'Eric' }];
+console.log(arr1);
