@@ -5,3 +5,15 @@ console.log(x);
 
 const y: number = 15.8576;
 console.log(y.toPrecision(4));
+
+// 2 - string
+const firstName: string = 'Eric';
+console.log(firstName.toUpperCase());
+
+let fullName: string;
+
+const lastName: string = 'Moniz';
+
+fullName = firstName + ' ' + lastName;
+
+console.log(fullName);
