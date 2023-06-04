@@ -33,3 +33,10 @@ setTimeout(function () {
     // console.log(parseFloat(sallary)); // -> gera erro porque parseFloat espera uma string como argumento
     // console.log(sallary); // -> funciona
 }, 2000);
+//* 7. Tipos de objeto
+// sintaxe é: { prop: tipo1, prop: tipo2 }
+function passCoordinates(coord) {
+    console.log('X coordinates: ' + coord.x);
+    console.log('Y coordinates: ' + coord.y);
+}
+passCoordinates({ x: 25, y: 45.987 });
