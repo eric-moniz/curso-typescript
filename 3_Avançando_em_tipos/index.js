@@ -49,3 +49,12 @@ function showNumbers(a, b, c) {
 }
 showNumbers(1, 2, 3);
 showNumbers(1, 2);
+//* 9. Validação de propriedades opcionais
+function advancedGreeting(firstName, lastName) {
+    if (lastName !== undefined) {
+        return `Olá, ${firstName} ${lastName}, tudo bem?`;
+    }
+    return `Olá, ${firstName}, tudo bem?`;
+}
+console.log(advancedGreeting('Eric', 'Moniz'));
+console.log(advancedGreeting('Eric'));
