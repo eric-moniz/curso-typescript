@@ -27,3 +27,9 @@ function greeting(name) {
     return `Olá ${name}`;
 }
 console.log(greeting('Eric'));
+//* 6. Funções anônimas
+setTimeout(function () {
+    const sallary = 1000;
+    // console.log(parseFloat(sallary)); // -> gera erro porque parseFloat espera uma string como argumento
+    // console.log(sallary); // -> funciona
+}, 2000);
