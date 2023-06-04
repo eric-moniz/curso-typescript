@@ -10,3 +10,9 @@ var fullName;
 var lastName = 'Moniz';
 fullName = firstName + ' ' + lastName;
 console.log(fullName);
+// 3 - boolean
+var a = false;
+console.log(a);
+console.log(typeof a);
+a = true;
+console.log(a);
