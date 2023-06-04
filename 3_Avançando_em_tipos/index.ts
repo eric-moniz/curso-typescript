@@ -74,3 +74,16 @@ function advancedGreeting(firstName: string, lastName?: string) {
 }
 console.log(advancedGreeting('Eric', 'Moniz'));
 console.log(advancedGreeting('Eric'));
+
+//* 10. Union type
+/* 
+    O Union type é uma alternativa melhor do que o 'any';
+    Onde podemos 'determinar dois tipos' para um dado;
+    A sintaxe (ex): number | string
+*/
+function showBalance(balance: string | number) {
+	console.log(`O saldo da conta é R$${balance}`);
+}
+showBalance(1000);
+showBalance('500');
+const arr2: Array<number | string | boolean> = [1, 'teste', true];
