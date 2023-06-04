@@ -87,3 +87,13 @@ function showBalance(balance: string | number) {
 showBalance(1000);
 showBalance('500');
 const arr2: Array<number | string | boolean> = [1, 'teste', true];
+
+//* 11. Condicionais com union types
+function showUserRole(role: boolean | string) {
+	if (typeof role === 'boolean') {
+		return 'Usuário não aprovado';
+	}
+	return `A função do usuário é: ${role}`;
+}
+console.log(showUserRole(false));
+console.log(showUserRole('Admin'));
