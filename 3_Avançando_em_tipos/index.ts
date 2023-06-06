@@ -16,7 +16,7 @@ console.log(nums);
 console.log(nums[2]);
 
 //* 3. O tipo 'any'
-/* 
+/*
     O 'any' transmite ao TS que qualquer tipo satisfaz a variável;
     Devemos evitar ao máximo este tipo, pois vai contra os principios do TypeScript;
     Dois casos de usos: o tipo de dado realmente não importa e arrays com dados de múltiplos tipos;
@@ -76,7 +76,7 @@ console.log(advancedGreeting('Eric', 'Moniz'));
 console.log(advancedGreeting('Eric'));
 
 //* 10. Union type
-/* 
+/*
     O Union type é uma alternativa melhor do que o 'any';
     Onde podemos 'determinar dois tipos' para um dado;
     A sintaxe (ex): number | string
@@ -97,3 +97,12 @@ function showUserRole(role: boolean | string) {
 }
 console.log(showUserRole(false));
 console.log(showUserRole('Admin'));
+
+//* 12. Type alias
+type ID = string | number;
+function showId(id: ID) {
+	console.log(`O ID é: ${id}`);
+}
+
+showId(1);
+showId('200');
