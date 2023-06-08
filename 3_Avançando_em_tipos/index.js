@@ -3,7 +3,7 @@
 let numbers = [1, 2, 3];
 numbers.push(10);
 console.log(numbers[2]);
-const nomes = ['Eric', 'Joâo'];
+const nomes = ["Eric", "Joâo"];
 //* 2. Outras sintaxes de arrays - não muito usado essa sintaxe
 const nums = [100, 200];
 nums.push(300);
@@ -15,7 +15,7 @@ console.log(nums[2]);
     Devemos evitar ao máximo este tipo, pois vai contra os principios do TypeScript;
     Dois casos de usos: o tipo de dado realmente não importa e arrays com dados de múltiplos tipos;
 */
-const arr1 = [1, 'teste', true, [], { nome: 'Eric' }];
+const arr1 = [1, "teste", true, [], { nome: "Eric" }];
 console.log(arr1);
 //* 4. Tipo de parâmetro de funçôes
 function soma(a, b) {
@@ -26,7 +26,7 @@ soma(4, 5);
 function greeting(name) {
     return `Olá ${name}`;
 }
-console.log(greeting('Eric'));
+console.log(greeting("Eric"));
 //* 6. Funções anônimas
 setTimeout(function () {
     const sallary = 1000;
@@ -36,16 +36,16 @@ setTimeout(function () {
 //* 7. Tipos de objeto
 // sintaxe é: { prop: tipo1, prop: tipo2 }
 function passCoordinates(coord) {
-    console.log('X coordinates: ' + coord.x);
-    console.log('Y coordinates: ' + coord.y);
+    console.log("X coordinates: " + coord.x);
+    console.log("Y coordinates: " + coord.y);
 }
 passCoordinates({ x: 25, y: 45.987 });
 //* 8. Propriedades opcionais
 function showNumbers(a, b, c) {
-    console.log('A: ' + a);
-    console.log('B: ' + b);
+    console.log("A: " + a);
+    console.log("B: " + b);
     if (c)
-        console.log('C: ' + c);
+        console.log("C: " + c);
 }
 showNumbers(1, 2, 3);
 showNumbers(1, 2);
@@ -56,8 +56,8 @@ function advancedGreeting(firstName, lastName) {
     }
     return `Olá, ${firstName}, tudo bem?`;
 }
-console.log(advancedGreeting('Eric', 'Moniz'));
-console.log(advancedGreeting('Eric'));
+console.log(advancedGreeting("Eric", "Moniz"));
+console.log(advancedGreeting("Eric"));
 //* 10. Union type
 /*
     O Union type é uma alternativa melhor do que o 'any';
@@ -68,22 +68,22 @@ function showBalance(balance) {
     console.log(`O saldo da conta é R$${balance}`);
 }
 showBalance(1000);
-showBalance('500');
-const arr2 = [1, 'teste', true];
+showBalance("500");
+const arr2 = [1, "teste", true];
 //* 11. Condicionais com union types
 function showUserRole(role) {
-    if (typeof role === 'boolean') {
-        return 'Usuário não aprovado';
+    if (typeof role === "boolean") {
+        return "Usuário não aprovado";
     }
     return `A função do usuário é: ${role}`;
 }
 console.log(showUserRole(false));
-console.log(showUserRole('Admin'));
+console.log(showUserRole("Admin"));
 function showId(id) {
     console.log(`O ID é: ${id}`);
 }
 showId(1);
-showId('200');
+showId("200");
 function showCoords(obj) {
     console.log(`X: ${obj.x} Y: ${obj.y} Z: ${obj.z}`);
 }
@@ -93,3 +93,9 @@ const coordObj = {
     z: 20,
 };
 showCoords(coordObj);
+const somePerson = { name: "Eric", age: 43 };
+console.log(somePerson);
+// ao tentar declarar novamente o obj personType, irá gerar erro
+// type personType = {
+//   age: number
+// }
