@@ -6,7 +6,7 @@ numbers.push(10);
 
 console.log(numbers[2]);
 
-const nomes: string[] = ["Eric", "Joâo"];
+const nomes: string[] = ['Eric', 'Joâo'];
 
 //* 2. Outras sintaxes de arrays - não muito usado essa sintaxe
 
@@ -22,7 +22,7 @@ console.log(nums[2]);
     Dois casos de usos: o tipo de dado realmente não importa e arrays com dados de múltiplos tipos;
 */
 
-const arr1: any = [1, "teste", true, [], { nome: "Eric" }];
+const arr1: any = [1, 'teste', true, [], { nome: 'Eric' }];
 console.log(arr1);
 
 //* 4. Tipo de parâmetro de funçôes
@@ -37,7 +37,7 @@ soma(4, 5);
 function greeting(name: string): string {
   return `Olá ${name}`;
 }
-console.log(greeting("Eric"));
+console.log(greeting('Eric'));
 
 //* 6. Funções anônimas
 
@@ -51,16 +51,16 @@ setTimeout(function () {
 //* 7. Tipos de objeto
 // sintaxe é: { prop: tipo1, prop: tipo2 }
 function passCoordinates(coord: { x: number; y: number }) {
-  console.log("X coordinates: " + coord.x);
-  console.log("Y coordinates: " + coord.y);
+  console.log('X coordinates: ' + coord.x);
+  console.log('Y coordinates: ' + coord.y);
 }
 passCoordinates({ x: 25, y: 45.987 });
 
 //* 8. Propriedades opcionais
 function showNumbers(a: number, b: number, c?: number) {
-  console.log("A: " + a);
-  console.log("B: " + b);
-  if (c) console.log("C: " + c);
+  console.log('A: ' + a);
+  console.log('B: ' + b);
+  if (c) console.log('C: ' + c);
 }
 showNumbers(1, 2, 3);
 showNumbers(1, 2);
@@ -72,8 +72,8 @@ function advancedGreeting(firstName: string, lastName?: string) {
   }
   return `Olá, ${firstName}, tudo bem?`;
 }
-console.log(advancedGreeting("Eric", "Moniz"));
-console.log(advancedGreeting("Eric"));
+console.log(advancedGreeting('Eric', 'Moniz'));
+console.log(advancedGreeting('Eric'));
 
 //* 10. Union type
 /*
@@ -85,18 +85,18 @@ function showBalance(balance: string | number) {
   console.log(`O saldo da conta é R$${balance}`);
 }
 showBalance(1000);
-showBalance("500");
-const arr2: Array<number | string | boolean> = [1, "teste", true];
+showBalance('500');
+const arr2: Array<number | string | boolean> = [1, 'teste', true];
 
 //* 11. Condicionais com union types
 function showUserRole(role: boolean | string) {
-  if (typeof role === "boolean") {
-    return "Usuário não aprovado";
+  if (typeof role === 'boolean') {
+    return 'Usuário não aprovado';
   }
   return `A função do usuário é: ${role}`;
 }
 console.log(showUserRole(false));
-console.log(showUserRole("Admin"));
+console.log(showUserRole('Admin'));
 
 //* 12. Type alias
 type ID = string | number;
@@ -105,7 +105,7 @@ function showId(id: ID) {
 }
 
 showId(1);
-showId("200");
+showId('200');
 
 //* 13. interface
 interface Point {
@@ -139,7 +139,7 @@ interface Person {
   age: number;
 }
 
-const somePerson: Person = { name: "Eric", age: 43 };
+const somePerson: Person = { name: 'Eric', age: 43 };
 console.log(somePerson);
 
 // usando o type
@@ -151,3 +151,23 @@ type personType = {
 // type personType = {
 //   age: number
 // }
+
+//* 15. Literal types
+/* 
+  Literal types é um recurso que permite colocar valores como tipos;
+  Isso restringe o uso não só tipos,como também os própios valores;
+  Este recurso é muito utilizado com Union types;
+*/
+
+let test: 'testando';
+
+// test = 'q' // gera erro!
+test = 'testando';
+console.log(test);
+
+function showDirection(direction: 'left' | 'right' | 'center') {
+  console.log(`A direção é: ${direction}`);
+}
+
+showDirection('center');
+// showDirection('top'); // gera erro pois top nao é um tipo
