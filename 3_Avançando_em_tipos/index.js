@@ -114,3 +114,12 @@ function showDirection(direction) {
 }
 showDirection('center');
 // showDirection('top'); // gera erro pois top nao é um tipo
+//* 16. Non-null Assertion Operator
+/*
+  Às vezes o typescript pode evidenciar um erro, baseado em um valor que no
+  momento do código ainda não está disponivel;
+  Porém se sabemos que este valor será preenchido, podemos evitar o erro;
+  Utilizando do caracter '!'
+*/
+const p = document.getElementById('some-p');
+console.log(p.innerText);
