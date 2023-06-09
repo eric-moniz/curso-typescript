@@ -134,3 +134,13 @@ let n;
 // n = 1 // gera erro pois o valor é muito baixo e pode ser do tipo number normal
 n = 1000n;
 console.log(n);
+//* 18. Symbol
+/*
+  De forma resumida, o Symbol cria uma referência ´nica para um valor;
+  Ou seja, mesmo que ele possua o mesmo valor de outra variável, teremos valores
+  sendo considerado diferentes;
+*/
+let symbolA = Symbol('a');
+let symbolB = Symbol('a');
+console.log(symbolA == symbolB);
+console.log(symbolA === symbolB);
