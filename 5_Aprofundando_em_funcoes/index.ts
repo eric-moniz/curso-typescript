@@ -81,3 +81,17 @@ function biggestNumber<T extends number | string>(a: T, b: T): T {
 
 console.log(biggestNumber(5, 3));
 console.log(biggestNumber('12', '5'));
+
+//* 5. Definindo tipo de parâmetros / argumentos
+/*
+  Em Generic functions temos que utilizar parâmetros de tipos semelhantes, se
+  não recebemos um erro;
+  Porém há a possibilidade de determinar o tipo também dos parâmetros aceitos,
+  com uma sintaxe especial;
+  Isso faz com que a validação do TS aceite os tipos escolhidos;
+*/
+function mergeArrays<T>(arr1: T[], arr2: T[]) {
+  return arr1.concat(arr2);
+}
+console.log(mergeArrays([1, 2, 3], [4, 5, 6]));
+console.log(mergeArrays<number | string>([1, 2, 3], ['teste', 'testando']));
