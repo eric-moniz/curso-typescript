@@ -11,3 +11,19 @@ function withoutReturn() {
     // return 1 // gera erro não pode a clausula de return
 }
 withoutReturn();
+//* 2. Callback como argumento
+/*
+  Podemos inserir uma função de callback como argumento de função;
+  Nela conseguimos definir o tipo de argumento aceito pela callback;
+  E também o tipo de retorno da mesma
+*/
+function greeting(name) {
+    return `Olá ${name}`;
+}
+function preGreeting(f, userName) {
+    console.log('Preparando a função!');
+    const greet = f(userName);
+    console.log(greet);
+}
+preGreeting(greeting, 'Eric');
+preGreeting(greeting, 'João');
