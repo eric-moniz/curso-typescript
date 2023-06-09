@@ -110,7 +110,7 @@ function showDogDetails(dog: Dog) {
   if ('breed' in dog) {
     console.log(`O cachorro é da raça ${dog.breed}`);
   } else {
-    console.log(`O cachorro é da raça SRD`);
+    console.log(`O cachorro é SRD`);
   }
 }
 showDogDetails(turca);
