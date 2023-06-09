@@ -181,3 +181,17 @@ showDirection('center');
 */
 const p = document.getElementById('some-p');
 console.log(p!.innerText);
+
+//* 17. BigInt
+/* 
+  Com o tipo bigInte podemos declarar números com valores muuito altos;
+  Podemos utilizar a notação literal, por exemplo: 100n;
+  Para este recurso precisamos mudar a configuração do TS, para a versão mínima
+  de ES2020
+*/
+
+let n: bigint;
+// n = 1 // gera erro pois o valor é muito baixo e pode ser do tipo number normal
+n = 1000n;
+
+console.log(n);
