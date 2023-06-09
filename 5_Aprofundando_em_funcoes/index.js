@@ -48,3 +48,21 @@ function mergeObjects(obj1, obj2) {
 }
 const newObject = mergeObjects({ name: 'Eric' }, { age: 43, job: 'programmer' });
 console.log(newObject);
+//* 4. Constraints nas Generic Functions
+/*
+  As generic Functions podem ter seu escopo reduzido por constraints;
+  Basicamente limitamos os tipos que podem ser utilizados no Generic;
+  Isso faz com que nosso escopo seja menos abrangente;
+*/
+function biggestNumber(a, b) {
+    let biggest;
+    if (+a > +b) {
+        biggest = a;
+    }
+    else {
+        biggest = b;
+    }
+    return biggest;
+}
+console.log(biggestNumber(5, 3));
+console.log(biggestNumber('12', '5'));
