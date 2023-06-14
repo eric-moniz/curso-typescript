@@ -79,3 +79,17 @@ function mergeArrays(arr1, arr2) {
 }
 console.log(mergeArrays([1, 2, 3], [4, 5, 6]));
 console.log(mergeArrays([1, 2, 3], ['teste', 'testando']));
+//* 6. Parâmetros opcionais
+/*
+  Nem sempre utilizamos todos os parâmetros de uma função;
+  Mas se ele for opcional, precisamos declarar isso para o TS;
+  E ainda deixar ele no fim da lista de parâmetros;
+*/
+function modernGreeting(name, greet) {
+    if (greet) {
+        return `Olá ${greet} ${name}, tudo bem?`;
+    }
+    return `Olá ${name}, tudo bem?`;
+}
+console.log(modernGreeting('Matheus'));
+console.log(modernGreeting('Eric', 'Dr.'));
