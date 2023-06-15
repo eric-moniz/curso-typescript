@@ -93,3 +93,14 @@ function modernGreeting(name, greet) {
 }
 console.log(modernGreeting('Matheus'));
 console.log(modernGreeting('Eric', 'Dr.'));
+//* 7. Parâmetros default
+/*
+  Os parâmetros default são os que já possuem um valor definido;
+  Se não passarmos para a função, é utilizado esse valor;
+  Para este recurso, a aplicação em TS é igual JS;
+*/
+function somaDefault(n, m = 10) {
+    return n + m;
+}
+console.log(somaDefault(10));
+console.log(somaDefault(1, 15));
