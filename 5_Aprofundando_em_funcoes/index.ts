@@ -124,3 +124,22 @@ function somaDefault(n: number, m = 10): number {
 
 console.log(somaDefault(10));
 console.log(somaDefault(1, 15));
+
+//* 8. O tipo unknown
+/*
+  O tipo unknown é utilizado de forma semelhante ao any, ele aceita qualquer
+  tipo de dado;
+  Porém a diferença é que ele não deixa algo ser executado se não houver valida
+  ção de tipo;
+  Ou seja, adiciona uma trava de segurança;
+*/
+function doSomething(x: unknown) {
+  if (Array.isArray(x)) {
+    console.log(x[0]);
+  } else if (typeof x === 'number') {
+    console.log('X é um número');
+  }
+}
+
+doSomething(1);
+doSomething([1, 2, 3]);
