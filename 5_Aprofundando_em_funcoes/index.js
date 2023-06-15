@@ -122,3 +122,13 @@ function doSomething(x) {
 }
 doSomething(1);
 doSomething([1, 2, 3]);
+//* 9. o tipo never
+/*
+    O never é um tipo de retorno semelhante ao void;
+    Porém é utilizado quando a função não retorna nada;
+    Um exemplo de uso: retorno de erros;
+ */
+function showErrorMessage(msg) {
+    throw new Error(msg);
+}
+// showErrorMessage('Algum erro!');
