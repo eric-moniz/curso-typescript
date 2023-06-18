@@ -57,3 +57,23 @@ const u2: User = { email: 'joao@email.com' };
 
 showUserDetails(u1);
 showUserDetails(u2);
+
+//* 3. Propriedades readonly
+/*
+    As propriedades readonly podem ser alteradas apenas uma vez, na criação do novo dado;
+    É uma forma de criar um valor constante em um objeto;
+    Podemos adicionar as interfaces;
+*/
+interface Car {
+  brand: string;
+  readonly wheels: number;
+}
+
+const fusca: Car = {
+  brand: 'VW',
+  wheels: 4,
+};
+
+console.log(fusca);
+
+// fusca.wheels = 5 // gera erro pois é somente leitura
