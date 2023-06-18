@@ -34,4 +34,10 @@ const fusca = {
     wheels: 4,
 };
 console.log(fusca);
-// fusca.wheels = 5 // gera erro pois é somente leitura
+let coords = {
+    x: 10,
+};
+// podemos adicionar mais propriedades ao objeto, desde que respeitamos a interface
+coords.y = 15;
+console.log(coords); // {x: 10, y: 15}
+// coords.z = '1'; // gera erro pois a propriedade só aceita numbers

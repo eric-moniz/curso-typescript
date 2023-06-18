@@ -75,5 +75,26 @@ const fusca: Car = {
 };
 
 console.log(fusca);
-
 // fusca.wheels = 5 // gera erro pois é somente leitura
+
+//* 4. Index Signature
+/*
+    Utilizamos o index signature quando não sabemos o nome das chaves, mas já sabemos
+    quais os tipos de um objeto ou array;
+    Isso restringe a tipos que não devem ser utilizados;
+    Uma barreira de segurança a mais na nossa variável;
+*/
+interface CoordObject {
+  [index: string]: number;
+}
+
+let coords: CoordObject = {
+  x: 10,
+};
+
+// podemos adicionar mais propriedades ao objeto, desde que respeitamos a interface
+coords.y = 15;
+
+console.log(coords); // {x: 10, y: 15}
+
+// coords.z = '1'; // gera erro pois a propriedade só aceita numbers
