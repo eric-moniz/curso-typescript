@@ -32,3 +32,28 @@ const shirt: Product = {
 };
 showProductDetails(shirt);
 showProductDetails({ name: 'Tênis', price: 129.99, isAvailable: false });
+
+//* 2. Propriedades opcionais em interfaces
+/*
+    As interfaces podem conter propriedades de objeto opcionais;
+    Basta adicionar a interrogação no meio da propriedade;
+    Exemplo: nome?: string
+*/
+interface User {
+  email: string;
+  role?: string;
+}
+
+function showUserDetails(user: User) {
+  console.log(`O usuário tem o email: ${user.email}`);
+
+  if (user.role) {
+    console.log(`A função do usuário é: ${user.role}`);
+  }
+}
+
+const u1: User = { email: 'eric@email.com', role: 'Admin' };
+const u2: User = { email: 'joao@email.com' };
+
+showUserDetails(u1);
+showUserDetails(u2);
