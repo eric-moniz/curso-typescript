@@ -155,3 +155,16 @@ function showErrorMessage(msg: string): never {
 }
 
 // showErrorMessage('Algum erro!');
+
+//* 10. Rest Parameters ou operator
+/*
+  Em JavaScript ES6 podemos utilizar o Rest Operator;
+  Para aplicá-lo em parâmetros em TS é fácil, basta definir o tipo de dado com a sintaxe de Res(...);
+*/
+function sumAll(...n: number[]) {
+  return n.reduce((number, sum) => sum + number);
+}
+
+console.log(sumAll(1, 2, 3, 4, 5));
+console.log(sumAll(5, 348, 2350));
+// console.log(sumAll('teste'));
