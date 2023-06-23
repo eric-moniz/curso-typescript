@@ -40,4 +40,15 @@ let coords = {
 // podemos adicionar mais propriedades ao objeto, desde que respeitamos a interface
 coords.y = 15;
 console.log(coords); // {x: 10, y: 15}
-// coords.z = '1'; // gera erro pois a propriedade só aceita numbers
+const eric = {
+    name: 'Eric',
+    age: 43,
+};
+console.log(eric);
+const goku = {
+    name: 'Goku',
+    age: 50,
+    superpowers: ['Kamehameha', 'Genki Dama'],
+};
+console.log(goku);
+console.log(goku.superpowers);
