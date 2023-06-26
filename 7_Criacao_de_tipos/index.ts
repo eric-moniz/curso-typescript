@@ -20,3 +20,20 @@ function showData<T>(arg: T): string {
 
 console.log(showData(5));
 console.log(showData('testando generic'));
+
+//* 2. Reduzindo tipos aceitos em generics - 'Constraints'
+/*
+  As constraints nos ajudam a limitar os tipos aceitos;
+  Como em Generic podemos ter tipos livres, elas vão filtrar os tipos aceitos;
+  Adicionando organização quando queremos aproveitar a liberdade dos Generics;
+*/
+function showProductName<T extends { name: string }>(obj: T) {
+  return `O nome do produto é: ${obj.name}`;
+}
+
+const myObj = { name: 'Porta', cor: 'Marrom' };
+const myObjCar = { name: 'Carro', wheels: 4, engine: 1.0 };
+const myObj2 = { description: 'Description obj', qty: 2 };
+console.log(showProductName(myObj));
+console.log(showProductName(myObjCar));
+// console.log(showProductName(myObj2)); // gera erro por não possuir a propriedade 'name'
