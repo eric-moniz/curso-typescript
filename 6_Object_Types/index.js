@@ -77,3 +77,11 @@ diretamente o array */
 myArray = myArray.map((item) => {
     return `Fruta: ${item}`;
 });
+const myNumberArray = [1, 2, 3, 4, 5];
+// const myNumberArray2: fiveNumbers = [1,2,3,4,5,6] // gera erro, ultrapassou numero máximo de elementos
+// const mixedArray: fiveNumbers = [1,true,'teste',4,5] // gera erro, declarando tipo errado dos elementos
+console.log(myNumberArray);
+const anotherUser = ['Matheus', 30];
+console.log(anotherUser[0]);
+anotherUser[0] = 'João';
+console.log(anotherUser[0]);
