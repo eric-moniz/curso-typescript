@@ -37,3 +37,25 @@ const myObj2 = { description: 'Description obj', qty: 2 };
 console.log(showProductName(myObj));
 console.log(showProductName(myObjCar));
 // console.log(showProductName(myObj2)); // gera erro por não possuir a propriedade 'name'
+
+//* 3. Interfaces com Generics
+/*
+  Com interfaces podemos criar tipos complexos para objetos;
+  Adicionando Generics podemos deixá-los mais brandos;
+  Aceitando tipos diferentes em ocasiões diferentes;
+*/
+interface MyObject<T, U, Q> {
+  name: string;
+  wheels: T;
+  engine: U;
+  color: Q;
+}
+
+type Car = MyObject<number, number, string>;
+type Pen = MyObject<boolean, boolean, string>;
+
+const myCar: Car = { name: 'Fusca', wheels: 4, engine: 1.3, color: 'Branco' };
+const myPen: Pen = { name: 'Caneta BIC', wheels: false, engine: false, color: 'Azul' };
+
+console.log(myCar);
+console.log(myPen);

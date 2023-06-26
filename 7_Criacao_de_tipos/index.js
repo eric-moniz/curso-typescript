@@ -33,4 +33,7 @@ const myObjCar = { name: 'Carro', wheels: 4, engine: 1.0 };
 const myObj2 = { description: 'Description obj', qty: 2 };
 console.log(showProductName(myObj));
 console.log(showProductName(myObjCar));
-// console.log(showProductName(myObj2)); // gera erro por não possuir a propriedade 'name'
+const myCar = { name: 'Fusca', wheels: 4, engine: 1.3, color: 'Branco' };
+const myPen = { name: 'Caneta BIC', wheels: false, engine: false, color: 'Azul' };
+console.log(myCar);
+console.log(myPen);
