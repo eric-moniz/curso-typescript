@@ -200,3 +200,17 @@ console.log(anotherUser[0]);
 
 anotherUser[0] = 'João';
 console.log(anotherUser[0]);
+
+//* 9. Tuplas com readOnly
+/*
+  Podemos criar 'tuplas com a propriedade de readonly';
+  É um tipo de dado 'super restrito' pois:
+  - Limita quano itens teremos, qual o tipo de cada um e também não são modificáveis;
+*/
+function showNumbers(numbers: readonly [number, number]) {
+  // numbers[0] = 10; // gera erro ao tentar modificar
+  console.log(numbers[0]);
+  console.log(numbers[1]);
+}
+
+showNumbers([1, 2]);
