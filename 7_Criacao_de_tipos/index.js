@@ -52,3 +52,24 @@ const server = {
     ram: '32GB',
 };
 console.log(getSomeKey(server, 'ram'));
+function showCharName(obj, key) {
+    return `${obj[key]}`;
+}
+const myChar = {
+    name: 'Eric',
+    age: 43,
+    hasDriveLicense: true,
+};
+console.log(showCharName(myChar, 'name'));
+console.log(showCharName(myChar, 'age'));
+// console.log(showCharName(myChar, 'gender')); // gera erro
+//* 6. typeof Type Operator
+/*
+  Com o typeof Type Operator podemos criar um novo tipo;
+  Este tipo será baseado no tipo de algum dado;
+  Ou seja, é interessante para quando queremos criar uma variável com o mesmo
+  tipo da outra, por exemplo;
+*/
+const userName = 'Matheus';
+const userName2 = 'João';
+const userName4 = 'Joaquim';

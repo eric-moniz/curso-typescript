@@ -76,3 +76,45 @@ const server = {
   ram: '32GB',
 };
 console.log(getSomeKey(server, 'ram'));
+
+//* 5. keyof Type Operator
+/*
+  Com o keyof Type Operator podemos criar um novo tipo;
+  Ele aceita dados do tipo objeto, como object literal e arrays;
+  E pode criar o tipo baseado nas chaves do objeto passado como parâmetro;
+*/
+type Character = { name: string; age: number; hasDriveLicense: boolean };
+
+type C = keyof Character;
+
+function showCharName(obj: Character, key: C): string {
+  return `${obj[key]}`;
+}
+
+const myChar: Character = {
+  name: 'Eric',
+  age: 43,
+  hasDriveLicense: true,
+};
+
+console.log(showCharName(myChar, 'name'));
+console.log(showCharName(myChar, 'age'));
+// console.log(showCharName(myChar, 'gender')); // gera erro
+
+//* 6. typeof Type Operator
+/*
+  Com o typeof Type Operator podemos criar um novo tipo;
+  Este tipo será baseado no tipo de algum dado;
+  Ou seja, é interessante para quando queremos criar uma variável com o mesmo
+  tipo da outra, por exemplo;
+*/
+const userName: string = 'Matheus';
+
+const userName2: typeof userName = 'João';
+
+// const userName3: typeof userName = 14 // gera erro pois espera uma string
+
+// pode ser usado com type
+type x = typeof userName;
+
+const userName4: x = 'Joaquim';
