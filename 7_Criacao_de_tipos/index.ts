@@ -118,3 +118,28 @@ const userName2: typeof userName = 'João';
 type x = typeof userName;
 
 const userName4: x = 'Joaquim';
+
+//* 7. Indexed Access types
+/*
+  A a bordagem Indexed Access types pode criar um tipo baseado em uma chave de objeto;
+  Ou seja, conseguimos reaproveitar o tipo da chave para outros locais, como
+  funções
+
+  similar ao keyof, porém agora é mais especifico no tipo e não atrelado ao objeto em si
+  como no caso de keyof
+*/
+type Truck = { km: number; kg: number; description: string };
+
+type Km = Truck['km']; // estamos sendo mais especificos em relação ao tipo que nesse caso
+
+const newTruck: Truck = {
+  km: 10000,
+  kg: 5000,
+  description: 'Caminhão para pouca carga',
+};
+
+function showKm(km: Km) {
+  console.log(`O veículo tem a km de: ${km}`);
+}
+
+showKm(newTruck.km);
