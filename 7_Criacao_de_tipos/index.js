@@ -82,3 +82,4 @@ function showKm(km) {
     console.log(`O veículo tem a km de: ${km}`);
 }
 showKm(newTruck.km);
+const someVar = 5;

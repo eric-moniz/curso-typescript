@@ -143,3 +143,24 @@ function showKm(km: Km) {
 }
 
 showKm(newTruck.km);
+
+//* 8. Conditional Expressions Types
+/*
+  O tipo por condição permite criar um novo tipo com base em um if / else;
+  Mas não são aceitas expressões tão amplas;
+  Utilizamos a sintaxe de if ternário;
+*/
+interface A {}
+
+interface B extends A {}
+
+interface Teste {
+  showName(): string;
+}
+
+type myType = B extends A ? number : string;
+
+const someVar: myType = 5;
+// const someVar2: myType = 'abc'// gera erro, pois é esperado um number
+
+type myTypeB = Teste extends { showNumber(): number } ? string : boolean;
