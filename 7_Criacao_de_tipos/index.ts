@@ -164,3 +164,21 @@ const someVar: myType = 5;
 // const someVar2: myType = 'abc'// gera erro, pois é esperado um number
 
 type myTypeB = Teste extends { showNumber(): number } ? string : boolean;
+
+//* 9. Template literals type
+/*
+  Podemos criar tipos com Template literals;
+  É uma forma de customizar tipos de maneiras infinitas;
+  Pois o texto que formamos pode depender de variáveis;
+*/
+type TestA = 'text';
+
+type CustomType = `some ${TestA}`;
+
+const testing: CustomType = 'some text';
+// const testing2: CustomType = 'some text a' // gera erro
+
+type a1 = 'Testando';
+type a2 = 'Union';
+
+type a3 = `${a1}` | `${a2}`;

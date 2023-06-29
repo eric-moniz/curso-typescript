@@ -83,3 +83,4 @@ function showKm(km) {
 }
 showKm(newTruck.km);
 const someVar = 5;
+const testing = 'some text';
