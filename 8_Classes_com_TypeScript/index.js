@@ -14,3 +14,18 @@ console.log(eric);
 eric.name = 'Eric';
 // eric.job = 'Programmer' // gera erro, só aceita as propriedades tipadas na classe
 console.log(eric);
+//* 2. Constructor
+/*
+  Constructor é uma função que nos dá a possibilidade de iniciar um objeto com valores
+  nos seus campos;
+  Isso faz com que não precisemos mais da '!';
+  Provavelmente todos os campos serão preenchidos na hora de instaciar um objeto;
+*/
+class NewUser {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+const joao = new NewUser('João', 22);
+console.log(joao);
