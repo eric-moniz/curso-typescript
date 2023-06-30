@@ -39,3 +39,27 @@ class NewUser {
 
 const joao = new NewUser('João', 22);
 console.log(joao);
+
+//* 3. Campos readonly
+/*
+  Podemos iniciar o campo com valor e torná-lo readonly;
+  Ou seja, será um valor só para consulta;
+  Não podemos alterar este valor ao longo do programa
+*/
+class Car {
+  name;
+  readonly wheels = 4;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+const car1 = new Car('Fusca');
+console.log(car1);
+console.log(car1.wheels);
+
+// pode-se trocar a propriedade name
+car1.name = 'Fusca turbo';
+console.log(car1);
+// porém nao podemos alterar a propriedade readonly
+// car1.wheels = 5
