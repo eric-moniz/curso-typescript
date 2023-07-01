@@ -71,3 +71,20 @@ class KillerMachine extends Machine {
 const destroyer = new KillerMachine('Destroyer', 4);
 console.log(trator);
 console.log(destroyer);
+//* 5. Métodos
+/*
+  Métodos são comos funções da classe;
+  Podemos criá-los junto  das classes e os objetos podem utilizá-los;
+  É uma maneira de adicionar funcionalidades as classes;
+*/
+class Dwarf {
+    constructor(name) {
+        this.name = name;
+    }
+    greeting() {
+        console.log('Hey stranger!');
+    }
+}
+const jimmy = new Dwarf('Jimmy');
+console.log(jimmy.name);
+jimmy.greeting();
