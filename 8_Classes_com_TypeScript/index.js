@@ -151,3 +151,24 @@ myCoords.fillX = 15;
 myCoords.fillY = 0;
 myCoords.fillY = 5;
 console.log(myCoords.getCoords);
+class blogPost {
+    constructor(title) {
+        this.title = title;
+    }
+    itemTitle() {
+        return `O título do post é: ${this.title}`;
+    }
+}
+class webPost {
+    constructor(title) {
+        this.title = title;
+    }
+    itemTitle() {
+        return `O título é: ${this.title}`;
+    }
+}
+/* perceba que temos duas classes com o método itemTitle herdado da interface
+   esse é a aplicação da herança, ajuda na mantenção do código.
+*/
+const myPost = new blogPost('Hello world!');
+console.log(myPost.itemTitle());

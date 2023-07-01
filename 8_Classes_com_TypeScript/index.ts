@@ -204,3 +204,42 @@ myCoords.fillY = 0;
 myCoords.fillY = 5;
 
 console.log(myCoords.getCoords);
+
+//* 9. Herança de interfaces
+/*
+  Podemos herdar de interfaces também com a instrução 'implements';
+  A idéia é bem parecida de 'extends';
+  Porém esta forma é mais utilizada para criar os métodos que várias classes terão em comum;
+*/
+interface ShowTitle {
+  itemTitle(): string;
+}
+
+class blogPost implements ShowTitle {
+  title;
+
+  constructor(title: string) {
+    this.title = title;
+  }
+
+  itemTitle(): string {
+    return `O título do post é: ${this.title}`;
+  }
+}
+
+class webPost implements ShowTitle {
+  title;
+
+  constructor(title: string) {
+    this.title = title;
+  }
+
+  itemTitle(): string {
+    return `O título é: ${this.title}`;
+  }
+}
+/* perceba que temos duas classes com o método itemTitle herdado da interface
+   esse é a aplicação da herança, ajuda na mantenção do código.
+*/
+const myPost = new blogPost('Hello world!');
+console.log(myPost.itemTitle());
