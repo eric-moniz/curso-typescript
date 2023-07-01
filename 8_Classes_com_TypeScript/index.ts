@@ -63,3 +63,34 @@ car1.name = 'Fusca turbo';
 console.log(car1);
 // porém nao podemos alterar a propriedade readonly
 // car1.wheels = 5
+
+//* 4. Herança e super
+/*
+  Para gerar uma herança utilizamos a palavra reservada extends;
+  Depois vamos precisar passar as propriedades da classe pai para ela quando instanciamos
+  um objeto;
+  Isso será feito com a função super;
+*/
+class Machine {
+  name;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+const trator = new Machine('Trator');
+
+class KillerMachine extends Machine {
+  guns;
+
+  constructor(name: string, guns: number) {
+    super(name);
+    this.guns = guns;
+  }
+}
+
+const destroyer = new KillerMachine('Destroyer', 4);
+
+console.log(trator);
+console.log(destroyer);
