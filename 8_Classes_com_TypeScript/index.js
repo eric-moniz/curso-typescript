@@ -88,3 +88,20 @@ class Dwarf {
 const jimmy = new Dwarf('Jimmy');
 console.log(jimmy.name);
 jimmy.greeting();
+//* 6. O this
+/*
+  A palavra reservada this serve para nos referirmos ao objeto em si;
+  Ou seja, conseguimos acessar as suas propriedades;
+  Esta funcionalidade funciona da mesma forma que em JavaScript;
+*/
+class Truck {
+    constructor(model, hp) {
+        this.model = model;
+        this.hp = hp;
+    }
+    showDetails() {
+        console.log(`Caminhão do modelo ${this.model}, que possui ${this.hp} cavalos de potência.`);
+    }
+}
+const volvo = new Truck('Volvo', 400);
+volvo.showDetails();
