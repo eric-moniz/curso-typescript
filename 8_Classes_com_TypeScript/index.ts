@@ -243,3 +243,27 @@ class webPost implements ShowTitle {
 */
 const myPost = new blogPost('Hello world!');
 console.log(myPost.itemTitle());
+
+//* 10. Override de métodos
+/*
+  O override é uma técnica utilizada para substituir um método de uma classe que herdamos algo;
+  Basta criar o método com o mesmo nome na classe filha;
+  Isso caracteriza o override;
+*/
+class Base {
+  someMethod() {
+    console.log('alguma coisa');
+  }
+}
+
+/* criamos uma classe que extende a classe Base, mas com o método com mesmo nome 'someMethod'
+   com isso caracteriza o override e o ultimo método 'someMethod' é o que prevalece
+*/
+class Nova extends Base {
+  someMethod() {
+    console.log('testando outra coisa');
+  }
+}
+
+const myObj = new Nova();
+myObj.someMethod();
