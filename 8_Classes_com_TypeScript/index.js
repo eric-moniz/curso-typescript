@@ -193,3 +193,28 @@ class Nova extends Base {
 }
 const myObj = new Nova();
 myObj.someMethod();
+//* 11. Visibilidade
+/*
+  Visibilidade é o conceito de expor nossos métodos de classes;
+  public: visibilidade default, pode ser acessado em qualquer lugar;
+  protected: acessível apenas a subclasse da classe do método, para acessar uma propriedade
+  precisamos de um método;
+  private: apenas a classe que declarou o método pode utilizar;
+*/
+//* 11.1 Visibilidade - public
+/*
+  O public é o modo de visibilidade default;
+  Ou seja,já está implicito e não precisamos declarar;
+  Basicamente qualquer método ou propriedade de classe pai, estará acessivel na classe filha;
+*/
+class C {
+    constructor() {
+        this.x = 10;
+    }
+}
+class D extends C {
+}
+const cInstance = new C();
+console.log(cInstance.x);
+const dInstance = new D();
+console.log(dInstance.x);
