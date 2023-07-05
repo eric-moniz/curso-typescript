@@ -311,3 +311,30 @@ console.log(typeof newItem.first);
 const secondItem = new Item(12, true);
 console.log(secondItem.showFirst);
 console.log(typeof secondItem.first);
+//* 16. Parameters properties
+/*
+  Parameters pproperties é um recurso para definir a privacidade, nome e tipo das propriedades
+  no construtor
+  Isso resume um pouco a sintaxe das nossas classes;
+*/
+class ParameterProperties {
+    constructor(name, qty, price) {
+        this.name = name;
+        this.qty = qty;
+        this.price = price;
+        this.name = name;
+        this.qty = qty;
+        this.price = price;
+    }
+    get showQty() {
+        return `Qtd total: ${this.qty}`;
+    }
+    get showPrice() {
+        return `Preço: R$${this.price}`;
+    }
+}
+const newShirt = new ParameterProperties('Camisa', 5, 19.99);
+console.log(newShirt.name);
+// console.log(newShirt.price); // gera erro só pode ser acessadas por metodos da classe
+console.log(newShirt.showQty);
+console.log(newShirt.showPrice);
