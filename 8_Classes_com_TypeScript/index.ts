@@ -377,3 +377,35 @@ class StaticMembers {
 
 console.log(StaticMembers.prop);
 StaticMembers.staticMethod();
+
+//* 15. Generic class
+/*
+  Podemos criar classes com tipos genéricos também;
+  Ou seja, as propriedades dos argumentos podem ter os tipos definidos na hora da criação
+  da instância;
+  Isso nos permite maior flexbilidade em uma classe;
+*/
+class Item<T, U> {
+  first;
+  second;
+
+  constructor(first: T, second: U) {
+    this.first = first;
+    this.second = second;
+  }
+
+  get showFirst() {
+    return `O first é: ${this.first}`;
+  }
+}
+
+const newItem = new Item('caixa', 'surpresa');
+
+console.log(newItem);
+
+console.log(newItem.showFirst);
+console.log(typeof newItem.first);
+
+const secondItem = new Item(12, true);
+console.log(secondItem.showFirst);
+console.log(typeof secondItem.first);
