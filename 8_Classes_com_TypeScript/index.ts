@@ -325,3 +325,38 @@ const fInstance = new F();
 fInstance.showX();
 
 fInstance.showProtectedMethod();
+
+//* 13 Visibilidade: private
+/*
+  Os itens private,propriedades e métodos, só podem ser acessados na classe que os definiu;
+  E ainda precisam de métodos para serem acessados;
+  Está é a maior proteção para propriedades e métodos;
+*/
+class PrivateClass {
+  private name = 'Private';
+
+  showName() {
+    return this.name;
+  }
+
+  private privateMethod() {
+    console.log('Método privado');
+  }
+
+  showPrivateMethod() {
+    this.privateMethod();
+  }
+}
+
+const pObj = new PrivateClass();
+
+console.log(pObj.showName());
+
+pObj.showPrivateMethod();
+
+//! gera erro ao tentarmos acessar de uma varivael ou método de uma outra classe
+// class TestingPrivate extends PrivateClass {
+//   myMethod() {
+//     this.showPrivateMethod();
+//   }
+// }
