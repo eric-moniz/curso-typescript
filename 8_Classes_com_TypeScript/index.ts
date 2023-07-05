@@ -360,3 +360,20 @@ pObj.showPrivateMethod();
 //     this.showPrivateMethod();
 //   }
 // }
+
+//* 14. Static members
+/*
+  Podemos criar propriedades e méthodos estáticos em classes;
+  Isso faz com que o acesso ou a utilização não dependam de objetos;
+  Podemos utiliza-los a partir da própria classe, ou seja não precisamos instancia-los;
+*/
+class StaticMembers {
+  static prop = 'Teste static';
+
+  static staticMethod() {
+    console.log('Este é um método estático');
+  }
+}
+
+console.log(StaticMembers.prop);
+StaticMembers.staticMethod();
