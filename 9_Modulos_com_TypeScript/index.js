@@ -21,3 +21,12 @@ Usaremos o 'Node.js' para executar os arquivos com módulos;
 */
 const greet_1 = __importDefault(require("./greet"));
 (0, greet_1.default)();
+////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * 2. Importação de variáveis
+    Podemos exportar e importar variáveis também;
+    A sintaxe é um pouco mais simples, vamos utilizar apenas o export;
+    No arquivo de importação, vamos importar os valores com 'destructuring';
+*/
+const variable_1 = require("./variable");
+console.log(variable_1.x);

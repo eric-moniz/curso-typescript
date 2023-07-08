@@ -16,3 +16,14 @@ Usaremos o 'Node.js' para executar os arquivos com módulos;
 */
 import importGreet from './greet';
 importGreet();
+
+////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * 2. Importação de variáveis
+    Podemos exportar e importar variáveis também;
+    A sintaxe é um pouco mais simples, vamos utilizar apenas o export;
+    No arquivo de importação, vamos importar os valores com 'destructuring';
+*/
+import { x } from './variable';
+
+console.log(x);
