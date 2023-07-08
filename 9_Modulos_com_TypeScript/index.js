@@ -42,3 +42,12 @@ const multiple_1 = require("./multiple");
 console.log(multiple_1.a);
 console.log(multiple_1.b);
 (0, multiple_1.myFunction)();
+////////////////////////////////////////////////////////////////////////////////////////
+/*
+  * 4. Alias de importação
+    Podemos criar um alias para importações
+    Ou seja. 'mudar o nome' do quenfoi importado;
+    Podendo tornar este novo nome, uma 'forma mais simples de chamar o recurso';
+*/
+const changeName_1 = require("./changeName");
+console.log(changeName_1.someName);

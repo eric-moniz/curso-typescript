@@ -42,3 +42,13 @@ console.log(a);
 console.log(b);
 
 myFunction();
+
+////////////////////////////////////////////////////////////////////////////////////////
+/*
+  * 4. Alias de importação
+    Podemos criar um alias para importações
+    Ou seja. 'mudar o nome' do quenfoi importado;
+    Podendo tornar este novo nome, uma 'forma mais simples de chamar o recurso';
+*/
+import { someName as name } from './changeName';
+console.log(name);
