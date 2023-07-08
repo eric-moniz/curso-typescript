@@ -52,3 +52,19 @@ myFunction();
 */
 import { someName as name } from './changeName';
 console.log(name);
+
+////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * 5. Importando diversos itens de uma única vez (importando tudo)
+    Podemos importar tudo que está em um arquivo com apenas um símbolo;
+    Utilizamos o '*' para isso;
+    Os dados virão em um objeto;
+ */
+import * as myNumbers from './numbers';
+console.log(myNumbers);
+
+console.log(myNumbers.n1);
+console.log(myNumbers.n2);
+console.log(myNumbers.n3);
+
+myNumbers.showNumber();
