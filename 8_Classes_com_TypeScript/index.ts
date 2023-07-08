@@ -457,3 +457,32 @@ const pessoa = new myClass('Jones');
 
 console.log(pessoa);
 console.log(pessoa.name);
+
+/*
+* 18. Classe abstrata
+  Abstract Class é um recurso para servir como molde de outra classe;
+  Todos os métodos dela devem ser implementados nas classes que a herdam;
+  E também não podemos instanciar objetos a partir destas classes;
+*/
+
+abstract class AbstractClass {
+  abstract showName(): void;
+}
+
+// note que gera erro ao tentar instanciar um objeto nessa classe
+// const newObj = new AbstractClass();
+
+class AbstractExample extends AbstractClass {
+  name: string;
+
+  constructor(name: string) {
+    super();
+    this.name = name;
+  }
+
+  showName() {
+    console.log(`O nome é: ${this.name}`);
+  }
+}
+const newAbstractObject = new AbstractExample('Josias');
+newAbstractObject.showName();
