@@ -68,3 +68,26 @@ console.log(myNumbers.n2);
 console.log(myNumbers.n3);
 
 myNumbers.showNumber();
+
+////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * 6. Importando tipos
+    Importar tipos ou interfaces também é possivel;
+    Vamos exportar como se fossem variáveis;
+    E no arquivo que os recebe, utilizamos destructuring;
+    Depois podemos implementar no projeto;
+ */
+import { Human } from './myType';
+
+class User implements Human {
+  name;
+  age;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const joao = new User('João', 25);
+console.log(joao);
