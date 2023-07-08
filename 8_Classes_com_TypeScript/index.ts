@@ -438,3 +438,22 @@ console.log(newShirt.name);
 // console.log(newShirt.price); // gera erro só pode ser acessadas por metodos da classe
 console.log(newShirt.showQty);
 console.log(newShirt.showPrice);
+
+//* 17. Class Expressions
+/*
+  Class expressions é um recurso para criar uma classe anônima;
+  Podemos também utilizar generics junto desse recurso;
+  Vamos encapsular a classe em uma variável;
+*/
+const myClass = class<T> {
+  name;
+
+  constructor(name: T) {
+    this.name = name;
+  }
+};
+
+const pessoa = new myClass('Jones');
+
+console.log(pessoa);
+console.log(pessoa.name);
