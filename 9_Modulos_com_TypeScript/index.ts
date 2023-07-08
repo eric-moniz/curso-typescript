@@ -27,3 +27,18 @@ importGreet();
 import { x } from './variable';
 
 console.log(x);
+
+////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * 3. Multiplas importações
+  Podemos exportar mútiplas variáveis e funções;
+  Isso pode ser realizado no mesmo arquivo;
+  Para esta modalidade utilizamos export para todos os dados;
+  E todos devem ser importados com destructuring;
+ */
+import { a, b, myFunction } from './multiple';
+
+console.log(a);
+console.log(b);
+
+myFunction();

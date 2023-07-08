@@ -30,3 +30,15 @@ const greet_1 = __importDefault(require("./greet"));
 */
 const variable_1 = require("./variable");
 console.log(variable_1.x);
+////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * 3. Multiplas importações
+  Podemos exportar mútiplas variáveis e funções;
+  Isso pode ser realizado no mesmo arquivo;
+  Para esta modalidade utilizamos export para todos os dados;
+  E todos devem ser importados com destructuring;
+ */
+const multiple_1 = require("./multiple");
+console.log(multiple_1.a);
+console.log(multiple_1.b);
+(0, multiple_1.myFunction)();
