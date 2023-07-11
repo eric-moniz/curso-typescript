@@ -79,3 +79,26 @@ __decorate([
 ], MultipleDecorators.prototype, "testing", null);
 const mutiple = new MultipleDecorators();
 mutiple.testing();
+//////////////////////////////////////////////////////////////////////////////////////////
+/*
+* 3. Decorator de classe
+    O decorator de classe está ligado ao constructor;
+    Ou seja, sempre que este for executado, teremos a execução do decorator;
+    Isso nos permite acrescentar algo a criação de classes;
+*/
+function classDec(constructor) {
+    console.log(constructor);
+    if (constructor.name === 'User') {
+        console.log('Criando usuário');
+    }
+}
+let User = class User {
+    constructor(name) {
+        this.name = name;
+    }
+};
+User = __decorate([
+    classDec
+], User);
+const user1 = new User('Eric');
+console.log(user1);
