@@ -5,12 +5,14 @@
     Esta função será chamada assim que o item que foi definido o decorator for executado;
     Para habilitar precisamos adicionar uma configuração no tsconfig.json;
 */
-
+//////////////////////////////////////////////////////////////////////////////////////////
 /*
     * 1. Criando o primeiro Decorator
     Vamos criar um decorator como uma function;
-    Ele pode trabalhar com argumentos especiais que são: 'target', 'propertyKey' e 'descriptor'
-    Estes são grandes trunfos do decorator pois nos dão a informação do local em que ele foi executado;
+    Ele pode trabalhar com argumentos especiais que são: 'target', 'propertyKey' e
+    'descriptor'
+    Estes são grandes trunfos do decorator pois nos dão a informação do local em que ele
+    foi executado;
 */
 function myDecorator() {
   // pode-se adicionar código antes do retorno
@@ -40,3 +42,53 @@ class myClass {
 const myObj = new myClass();
 
 myObj.testing();
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/*
+* 2. Mútiplos decorators
+    Podemos utilizar mútiplos decorators em TS;
+    O primeiro a ser executador é o que está mais abaixo do código;
+    Desta maneira é possível criar operações mais complexas;
+*/
+function a() {
+  return function (
+    target: any,
+    propertyKey: string,
+    descriptor: PropertyDescriptor
+  ) {
+    console.log('executou a.');
+  };
+}
+
+function b() {
+  return function (
+    target: any,
+    propertyKey: string,
+    descriptor: PropertyDescriptor
+  ) {
+    console.log('executou b.');
+  };
+}
+
+function c() {
+  return function (
+    target: any,
+    propertyKey: string,
+    descriptor: PropertyDescriptor
+  ) {
+    console.log('executou c.');
+  };
+}
+
+class MultipleDecorators {
+  @c() // 3. decorator a ser executado
+  @a() // 2. decorator a ser executado
+  @b() // 1. decorator a ser executado
+  testing() {
+    console.log('Terminando a execução');
+  }
+}
+
+const mutiple = new MultipleDecorators();
+
+mutiple.testing();
