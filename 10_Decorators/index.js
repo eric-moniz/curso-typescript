@@ -156,3 +156,37 @@ __decorate([
 const chamander = new Monster('Chamander', 10);
 console.log(chamander);
 console.log(chamander.showAge);
+//////////////////////////////////////////////////////////////////////////////////////////
+/*
+ *  6. Property decorator
+    O property decorator é utilizado nas propriedades de uma classe;
+    Ou seja, na hora da definição da mesma podemos 'ativar uma função';
+    Isso nos ajuda a modificar ou validar algum valor;
+ */
+function formatNumber() {
+    return function (target, propertyKey) {
+        let value;
+        const getter = function () {
+            return value;
+        };
+        const setter = function (newVal) {
+            value = newVal.padStart(5, '0');
+        };
+        Object.defineProperty(target, propertyKey, {
+            set: setter,
+            get: getter,
+        });
+    };
+}
+class ID {
+    constructor(id) {
+        this.id = id;
+    }
+}
+__decorate([
+    formatNumber() //aplicando o decorator
+], ID.prototype, "id", void 0);
+const newItem = new ID('1');
+console.log(newItem);
+// note que a estrutura do objeto mudou, mas pode-se acessá-lo normalmente
+console.log(newItem.id);
