@@ -102,3 +102,28 @@ User = __decorate([
 ], User);
 const user1 = new User('Eric');
 console.log(user1);
+/////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * 4. Decorator de método
+  Com este decorator podemos 'modificar a execução de métodos';
+  Precisamos inserir o decorator 'antes da declaração do método';
+  Ele é executado antes do método;
+*/
+function enumerable(value) {
+    return function (target, propertyKey, descriptor) {
+        descriptor.enumerable = value;
+    };
+}
+class Machine {
+    constructor(name) {
+        this.name = name;
+    }
+    showName() {
+        return `O nome da máquina é: ${this.name}`;
+    }
+}
+__decorate([
+    enumerable(false) //torna o método showname visivel na classe
+], Machine.prototype, "showName", null);
+const trator = new Machine('Trator');
+console.log(trator.showName());
