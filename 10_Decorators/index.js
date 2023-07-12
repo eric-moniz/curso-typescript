@@ -127,3 +127,32 @@ __decorate([
 ], Machine.prototype, "showName", null);
 const trator = new Machine('Trator');
 console.log(trator.showName());
+//////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * 5. Accessor decorator
+  Semelhante ao decorator de método;
+  Porém este serve apenas para os 'getters e setters';
+  Podemos alterar a execução antes de um set ou get;
+ */
+class Monster {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    get showName() {
+        return `Nome do monstro: ${this.name}`;
+    }
+    /* enumerable setada para false ou omitida neste exemplo naõ lista o getter, mas permite
+      a chamado desse getter
+    */
+    // @enumerable(true)
+    get showAge() {
+        return `Idade do monstro: ${this.age}`;
+    }
+}
+__decorate([
+    enumerable(true)
+], Monster.prototype, "showName", null);
+const chamander = new Monster('Chamander', 10);
+console.log(chamander);
+console.log(chamander.showAge);
