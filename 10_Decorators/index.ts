@@ -228,3 +228,43 @@ const newItem = new ID('1');
 console.log(newItem);
 // note que a estrutura do objeto mudou, mas pode-se acessá-lo normalmente
 console.log(newItem.id);
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * 7. Exemplo real de class Decorator
+  Com Class Decorator podemos influenciar o construtor
+  Neste exemplo vamos criar uma função para inserir data de criação dos objetos
+ */
+function createdDate(created: Function) {
+  created.prototype.createdAt = new Date();
+}
+
+@createdDate
+class Book {
+  id;
+  createdAt?: Date;
+
+  constructor(id: number) {
+    this.id = id;
+  }
+}
+
+@createdDate
+class Pen {
+  id;
+
+  constructor(id: number) {
+    this.id = id;
+  }
+}
+
+const newBook = new Book(12);
+const newPen = new Pen(55);
+console.log(newBook);
+console.log(newPen);
+console.log(newBook.createdAt);
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * 8. Exemplo real com Method decorator
+ */
