@@ -1,4 +1,6 @@
 import React from 'react';
+// aula 4 - Importando componente
+import FirstComponent from './components/FirstComponent';
 
 function App() {
   // 1. Variaveis
@@ -18,6 +20,7 @@ function App() {
       <p>{ano}</p>
       {isWorking && <p>Está trabalhando!</p>}
       <h3>{userGreeting(name)}</h3>
+      <FirstComponent />
     </div>
   );
 }

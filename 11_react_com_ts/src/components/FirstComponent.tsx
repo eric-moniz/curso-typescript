@@ -5,7 +5,7 @@ import { ReactElement } from 'react';
 function FirstComponent(): ReactElement {
   return (
     <div>
-      <p>First Component</p>
+      <h2>First Component</h2>
     </div>
   );
 }
