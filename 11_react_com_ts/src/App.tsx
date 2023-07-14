@@ -6,7 +6,7 @@ function App() {
   const ano: number = 2023;
   const isWorking: boolean = true;
 
-  // 2. funções
+  // aula aula 2. funções
   const userGreeting = (name: string): string => {
     return `Olá, ${name}!`;
   };
