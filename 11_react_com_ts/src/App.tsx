@@ -1,6 +1,9 @@
 import React from 'react';
 // aula 4 - Importando componente
 import FirstComponent from './components/FirstComponent';
+// aula 5 - Desestruturando props
+import SecondComponent from './components/SecondComponent';
+import Destructuring from './components/Destructuring';
 
 function App() {
   // 1. Variaveis
@@ -21,6 +24,13 @@ function App() {
       {isWorking && <p>Está trabalhando!</p>}
       <h3>{userGreeting(name)}</h3>
       <FirstComponent />
+      <SecondComponent name="Segundo componente" />
+      <Destructuring
+        title="Primeiro post"
+        content="Algum conteúdo"
+        commentsQty={10}
+        tags={['ts', 'js']}
+      />
     </div>
   );
 }
