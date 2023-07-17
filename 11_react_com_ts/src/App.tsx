@@ -4,6 +4,8 @@ import FirstComponent from './components/FirstComponent';
 // aula 5 - Desestruturando props
 import SecondComponent from './components/SecondComponent';
 import Destructuring from './components/Destructuring';
+// aula 6. useState
+import State from './components/State';
 
 function App() {
   // 1. Variaveis
@@ -31,6 +33,7 @@ function App() {
         commentsQty={10}
         tags={['ts', 'js']}
       />
+      <State />
     </div>
   );
 }
