@@ -7,6 +7,14 @@ import Destructuring, { Category } from './components/Destructuring';
 // aula 6. useState
 import State from './components/State';
 
+/* 8. Types
+    Além das interfaces, podemos criar estruturas de tipos com o type
+    Isso nos permite criar dados com tipos de dados fixos
+    Ou até tipos customizados, como quando utilizamos o operador '|'
+*/
+type textOrNull = string | null;
+type fixed = 'Isso' | 'Ou' | 'Aquilo';
+
 function App() {
   // 1. Variaveis
   const name: string = 'Eric';
@@ -17,6 +25,11 @@ function App() {
   const userGreeting = (name: string): string => {
     return `Olá, ${name}!`;
   };
+
+  // 8. Type
+  const myText: textOrNull = 'Tem algum texto aqui';
+  let mySecondText: textOrNull = null;
+  const testandoFixed: fixed = 'Isso';
 
   return (
     <div className="App">
@@ -42,6 +55,8 @@ function App() {
         category={Category.P}
       />
       <State />
+      {myText && <p>Tem texto na variável</p>}
+      {mySecondText && <p>Tem texto na variável</p>}
     </div>
   );
 }
