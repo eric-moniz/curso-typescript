@@ -3,7 +3,7 @@ import React from 'react';
 import FirstComponent from './components/FirstComponent';
 // aula 5 - Desestruturando props
 import SecondComponent from './components/SecondComponent';
-import Destructuring from './components/Destructuring';
+import Destructuring, { Category } from './components/Destructuring';
 // aula 6. useState
 import State from './components/State';
 
@@ -32,6 +32,14 @@ function App() {
         content="Algum conteúdo"
         commentsQty={10}
         tags={['ts', 'js']}
+        category={Category.TS}
+      />
+      <Destructuring
+        title="Segundo post"
+        content="Mais outro conteúdo"
+        commentsQty={5}
+        tags={['py']}
+        category={Category.P}
       />
       <State />
     </div>
