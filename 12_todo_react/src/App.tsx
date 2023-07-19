@@ -4,6 +4,8 @@ import styles from './App.module.css';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
+import TaskForm from './components/TaskForm';
+import TaskList from './components/TaskList';
 
 function App() {
   return (
@@ -11,7 +13,15 @@ function App() {
       <Header />
 
       <main className={styles.main}>
-        <h1>Conteúdo...</h1>
+        <div>
+          <h2>O quê você vai fazer?</h2>
+          <TaskForm btnText={'Criar tarefa'} />
+        </div>
+
+        <div>
+          <h2>Suas tarefas</h2>
+          <TaskList />
+        </div>
       </main>
 
       <Footer />
