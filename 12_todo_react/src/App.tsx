@@ -1,9 +1,16 @@
 import React from 'react';
 
+import Footer from './components/Footer';
+import Header from './components/Header';
+
 function App() {
   return (
     <div className='App'>
-      <h1>ToDo app</h1>
+      <Header />
+
+      <h1>Conteúdo...</h1>
+
+      <Footer />
     </div>
   );
 }
