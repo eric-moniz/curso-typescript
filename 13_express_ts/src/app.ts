@@ -45,6 +45,35 @@ app.get("/api/json", (req: Request, res: Response) => {
   });
 });
 
+// router parameters
+app.get("/api/product/:id", (req: Request, res: Response) => {
+  const id = req.params.id;
+  console.log(req.params);
+
+  switch (id) {
+    case "1":
+      return res.json({
+        id: 1,
+        name: "Boné",
+        price: 10,
+      });
+
+    case "2":
+      return res.json({
+        id: 2,
+        name: "Bermuda",
+        price: 19.99,
+      });
+
+    default:
+      return res.json({
+        erro: "Produto não encontrado!",
+      });
+  }
+
+  return res.send(`Parâmetros enviados foram: ${req.params}`);
+});
+
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Aplicação express + TS funcionando na porta ${PORT}`);
