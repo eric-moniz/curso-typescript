@@ -2,7 +2,7 @@
 // console.log("Express + TS");
 
 //* 2. Iniciar express
-import express from "express";
+import express, { Request, Response } from "express";
 
 const app = express();
 app.use(express.json());
@@ -28,6 +28,11 @@ app.all("/api/product/check", (req, res) => {
     default:
       return res.send("Não podemos realizar esta operação!");
   }
+});
+
+// typescript interfaces do express
+app.get("/api/interfaces", (req: Request, res: Response) => {
+  return res.send("Utilizando as interfaces do type script");
 });
 
 const PORT = 5000;
