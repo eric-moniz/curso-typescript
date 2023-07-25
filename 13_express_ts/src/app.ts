@@ -35,6 +35,16 @@ app.get("/api/interfaces", (req: Request, res: Response) => {
   return res.send("Utilizando as interfaces do type script");
 });
 
+// enviando JSON
+app.get("/api/json", (req: Request, res: Response) => {
+  return res.json({
+    name: "Shirt",
+    price: 30.0,
+    color: "Blue",
+    sizes: ["P", "M", "G"],
+  });
+});
+
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Aplicação express + TS funcionando na porta ${PORT}`);
