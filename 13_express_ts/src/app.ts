@@ -82,6 +82,13 @@ app.get("/api/product/:id/review/:reviewId", (req: Request, res: Response) => {
   res.send(`Acessando a review ${reviewId} do produto ${productId}`);
 });
 
+// router handler
+function getUser(req: Request, res: Response) {
+  return res.send("O usuário foi encontrado!");
+}
+
+app.get("/api/user/:id", getUser);
+
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Aplicação express + TS funcionando na porta ${PORT}`);
