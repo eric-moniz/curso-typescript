@@ -45,7 +45,7 @@ app.get("/api/json", (req: Request, res: Response) => {
   });
 });
 
-// router parameters
+// router parameters - rotas simples
 app.get("/api/product/:id", (req: Request, res: Response) => {
   const id = req.params.id;
   console.log(req.params);
@@ -72,6 +72,14 @@ app.get("/api/product/:id", (req: Request, res: Response) => {
   }
 
   return res.send(`Parâmetros enviados foram: ${req.params}`);
+});
+
+// router parameters - rotas mais complexas
+app.get("/api/product/:id/review/:reviewId", (req: Request, res: Response) => {
+  const productId = req.params.id;
+  const reviewId = req.params.reviewId;
+
+  res.send(`Acessando a review ${reviewId} do produto ${productId}`);
 });
 
 const PORT = 5000;
