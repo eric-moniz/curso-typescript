@@ -2,6 +2,7 @@
 // console.log("Express + TS");
 
 //* 2. Iniciar express
+import { error } from "console";
 import express, { NextFunction, Request, Response } from "express";
 
 const app = express();
@@ -129,6 +130,16 @@ app.get(
     return res.json({ status: true });
   }
 );
+
+// tratando erros
+app.get("/api/error", (req: Request, res: Response) => {
+  try {
+    // logica
+    throw new Error("Algo deu errado!");
+  } catch (e: any) {
+    res.status(500).json({ msg: e.message });
+  }
+});
 
 const PORT = 5000;
 app.listen(PORT, () => {
