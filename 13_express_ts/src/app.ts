@@ -116,6 +116,20 @@ app.get("/api/user/:id/access", checkUser, (req: Request, res: Response) => {
   });
 });
 
+// req e res com generics
+app.get(
+  "/api/user/:id/details/:name",
+  (
+    req: Request<{ id: string; name: string }>,
+    res: Response<{ status: boolean }>
+  ) => {
+    console.log(`ID: ${req.params.id}`);
+    console.log(`Name: ${req.params.name}`);
+
+    return res.json({ status: true });
+  }
+);
+
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Aplicação express + TS funcionando na porta ${PORT}`);
