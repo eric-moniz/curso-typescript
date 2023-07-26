@@ -5,7 +5,15 @@
 import express, { NextFunction, Request, Response } from "express";
 
 const app = express();
+
 app.use(express.json());
+
+// middleware para todas as rotas
+function showPath(req: Request, res: Response, next: NextFunction) {
+  console.log(req.path);
+  next();
+}
+app.use(showPath);
 
 app.get("/", (req, res) => {
   return res.send("Hello Express");
