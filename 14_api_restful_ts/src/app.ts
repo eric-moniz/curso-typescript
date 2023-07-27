@@ -6,6 +6,11 @@ const app = express();
 // JSON middleware
 app.use(express.json());
 
+// Routes
+import router from "./router";
+// prefixo api
+app.use("/api", router);
+
 // app port
 const port = config.get<number>("port");
 app.listen(port, async () => {
