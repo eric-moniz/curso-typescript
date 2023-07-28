@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import config from "config";
+import Logger from "../config/logger";
 
 async function connect() {
   const dbUri = config.get<string>("dbUri");
@@ -8,10 +9,12 @@ async function connect() {
     mongoose.set("strictQuery", true);
 
     await mongoose.connect(dbUri);
-    console.log("Conectou ao banco de dados!");
+    Logger.info("Conectou ao banco de dados!");
   } catch (e) {
-    console.log("Não foi possivel conectar ao DB!");
-    console.log(`Erroc: ${e}`);
+    Logger.error("Não foi possivel conectar ao DB!");
+    Logger.error(`Erroc: ${e}`);
+    // encerra a aplicação em caso de erro
+    // process.exit(1);
   }
 }
 
