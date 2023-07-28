@@ -17,6 +17,11 @@ import router from "./router";
 // Log - winston
 import Logger from "../config/logger";
 
+// Middlewares
+import morganMiddleware from "./middleware/morganMiddleware";
+
+app.use(morganMiddleware);
+
 // prefixo api
 app.use("/api", router);
 
