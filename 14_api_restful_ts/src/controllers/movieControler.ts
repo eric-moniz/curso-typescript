@@ -29,3 +29,12 @@ export async function findMovieById(req: Request, res: Response) {
     Logger.error(`Erro no sistema: ${e.message}`);
   }
 }
+
+export async function getAllMovies(req: Request, res: Response) {
+  try {
+    const movie = await MovieModel.find()
+    return res.status(200).json(movie)
+  } catch (e: any) {
+    Logger.error(`Erro no sistema: ${e.message}`);
+  }
+}
